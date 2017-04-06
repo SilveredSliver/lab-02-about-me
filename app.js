@@ -89,9 +89,9 @@ alert('running the script now')
     var guess;
 
       for (var guessesLeft = 6; guessesLeft > 0  && notDone; guessesLeft--) {
-        guess = prompt('What is my favorite number between 5 and 15?');//gets user input
-        guess = parseInt(guess);//converts user input "guess" to a number     "pareseInt".
-      if (guess === correctNumber) {
+        userGuess = prompt('What is my favorite number between 5 and 15?');//gets user input
+        userGuess = parseInt(guess);//converts user input "guess" to a number     "pareseInt".
+      if (userGuess === correctNumber) {
         notDone = false;
           alert('You got it right!');
           answersRight++;
