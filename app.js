@@ -125,7 +125,7 @@ alert('running the script now')
 
 
 
-       var count = alert('You got ' + answersRight.toString() + ' answers out of 7 questions correct!');
+       var count = alert('You got ' + answersRight + ' answers out of 7 questions correct!');
 
 //
 // CLASS-003 CODE DEMO
