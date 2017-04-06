@@ -1,11 +1,11 @@
-    'use strict';
+    'use strict';//Javascript code running in the webbrowser will make more alerts in the console when there is a mistake. (A stricter version to make sure you have all your code correct).
 
     console.log('user input values to prompts are listed below');
 alert('running the script now')
 // //    TODO: I want to prompt the user to guess the number 12 and they get 4 chances.
 //
 
-    var answersRight = 0;
+    var answersRight = 0;//Number of answers at teh very start before the user starts the guessing game is, of course, 0
 
 //Question 1
     var aliens = prompt('Do you like aliens?');
@@ -65,8 +65,7 @@ alert('running the script now')
       console.log('user input to prompt name was ' + name);
       console.log('user input to prompt clarifyAgain was ' + clarifyAgain);
     }
-    //
-//Final Review Question
+//Question 5
     var feedback = prompt('Did you like this short but invasive personal test?');
       if (feedback.trim().toLowerCase() === 'yes') {
         var clarity = confirm('Are you sure?');
@@ -84,15 +83,14 @@ alert('running the script now')
       console.log('user input to prompt feedback was ' + feedback);
       console.log('user input to confirm clarity was ' + clarity);
 
-
-
+//Question 6
     var correctNumber = 12;
     var notDone = true;
     var guess;
 
-      for (var guessesLeft = 4; guessesLeft > 0  && notDone; guessesLeft--) {
-        guess = prompt('What is my favorite number?');//gets user input
-        guess = parseInt(guess);//converts user input to a number
+      for (var guessesLeft = 6; guessesLeft > 0  && notDone; guessesLeft--) {
+        guess = prompt('What is my favorite number between 5 and 15?');//gets user input
+        guess = parseInt(guess);//converts user input "guess" to a number     "pareseInt".
       if (guess === correctNumber) {
         notDone = false;
           alert('You got it right!');
@@ -104,16 +102,17 @@ alert('running the script now')
         }
       }
 
-
+//Question 7
     var state = ['montana', 'oregon', 'florida', 'arizona'];
     var notDone = true;
     var guess;
 
       for (var guessesLeft = 6; guessesLeft > 0  && notDone; guessesLeft--) {
+        //The above line will run the for loop UNTIL "notDone" becomes false.
         guess = prompt('What is a state have I been to other than Washington state?');
       if (state.indexOf(guess.trim().toLowerCase()) >= 0 ) {
         notDone = false;
-          alert('You got it right!');
+          alert('You guessed one of them right!');
           answersRight++;
       } else if (guessesLeft === 0) {
           alert('you are out of guesses!');
@@ -125,7 +124,7 @@ alert('running the script now')
 
 
 
-       var count = alert('You got ' + answersRight + ' answers out of 7 questions correct!');
+       var count = alert('You got ' + answersRight + ' answers out of 7 questions correct!');//A new variable "count" is declared with the assigned value of an alert that will show a pop-up message with the very top variable "answersRight" which keeps track of all the answersRight the user has got once all the above code has been run.
 
 //
 // CLASS-003 CODE DEMO
