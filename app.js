@@ -1,5 +1,5 @@
     'use strict';//Javascript code running in the webbrowser will make more alerts in the console when there is a mistake. (A stricter version to make sure you have all your code correct).
-
+//window.onload = function() {
     console.log('user input values to prompts are listed below');
 alert('running the script now')
 // //    TODO: I want to prompt the user to guess the number 12 and they get 4 chances.
@@ -125,7 +125,7 @@ alert('running the script now')
 
 
        var count = alert('You got ' + answersRight + ' answers out of 7 questions correct!');//A new variable "count" is declared with the assigned value of an alert that will show a pop-up message with the very top variable "answersRight" which keeps track of all the answersRight the user has got once all the above code has been run.
-
+//}//End brace to window.onload = function() {
 //
 // CLASS-003 CODE DEMO
 //
