@@ -1,26 +1,29 @@
     'use strict';//Javascript code running in the webbrowser will make more alerts in the console when there is a mistake. (A stricter version to make sure you have all your code correct).
 //window.onload = function() {
     console.log('user input values to prompts are listed below');
-alert('running the script now')
+    alert('running the script now');
 // //    TODO: I want to prompt the user to guess the number 12 and they get 4 chances.
 //
 
     var answersRight = 0;//Number of answers at teh very start before the user starts the guessing game is, of course, 0
 
 //Question 1
-    var aliens = prompt('Do you like aliens?');
+    function alienLover(){
+      var aliens = prompt('Do you like aliens?');
       if (aliens.trim().toLowerCase() === 'yes') {
         alert('You weirdo!');
         answersRight++;
       } else if (aliens.trim().toLowerCase() === 'no') {
-        alert("You're heartless!");
+        alert('You\'re heartless!');
       } else {
-        alert('You failed to input a proper answer!')
+        alert('You failed to input a proper answer!');
       }
       console.log('user input to prompt aliens was ' + aliens);
-
+    }
+    alienLover();
 //Question 2
-    var banana = prompt('Are you a banana?');
+    function fruit(){
+      var banana = prompt('Are you a banana?');
       if (banana.trim().toLowerCase() === 'no') {
         alert('You are in denial!');
       } else if (banana.trim().toLowerCase() === 'yes') {
@@ -30,101 +33,114 @@ alert('running the script now')
         alert('Not a valid answer!');
       }
       console.log('user input to prompt banana was ' + banana);
-
+    }
+    fruit();
 //Question 3
-    var turtle = prompt('Are you a turtle?');
+    function reptile(){
+      var turtle = prompt('Are you a turtle?');
       if (turtle.trim().toLowerCase() === 'yes') {
-    var clarify = confirm('Are you sure?');
+        var clarify = confirm('Are you sure?');
         if (clarify === true) {
           alert('You are a weird turtle!');
           answersRight++;
         } else {
-          alert("I dont't believe you!");
+          alert('I dont\'t believe you!');
         }
       } else if (turtle.trim().toLowerCase() === 'no') {
         alert ('ok...I was just checking...');
       } else {
-        alert("What's with you and making up dumb answers??")
+        alert('What\'s with you and making up dumb answers??');
       }
       console.log('user input to prompt turtle was ' + turtle);
       console.log('user input to prompt clarify was ' + clarify);
-
+    }
+    reptile();
 //Question 4
-    var name = prompt('Is your name Weirdo Turtle Alien?');
+    function ridiculousName(){
+      var name = prompt('Is your name Weirdo Turtle Alien?');
       if (name.trim().toLowerCase() === 'yes') {
-        alert("Bwahahaha!!! That's hilarious!");
+        alert('Bwahahaha!!! That\'s hilarious!');
         answersRight++;
       } else if (name.trim().toLowerCase() === 'no') {
         var clarifyAgain = prompt('Are you sure that your name is Weirdo Turtle Alien?');
         if (clarifyAgain.trim().toLowerCase() === 'no') {
-          alert("There is nothing you can do to change the name I've given you!");
+          alert('There is nothing you can do to change the name I\'ve given you!');
         } else {
           alert('I knew it!');
-          answerRight++;
+          answersRight++;
         }
-      console.log('user input to prompt name was ' + name);
-      console.log('user input to prompt clarifyAgain was ' + clarifyAgain);
+        console.log('user input to prompt name was ' + name);
+        console.log('user input to prompt clarifyAgain was ' + clarifyAgain);
+      }
     }
+    ridiculousName();
 //Question 5
-    var feedback = prompt('Did you like this short but invasive personal test?');
+    function testFeedback(){
+      var feedback = prompt('Did you like this short but invasive personal test?');
       if (feedback.trim().toLowerCase() === 'yes') {
         var clarity = confirm('Are you sure?');
         if (clarity === true) {
           alert('You are amazing! ...Mostly!');
           answersRight++;
         } else {
-          alert("No takebacks!");
+          alert('No takebacks!');
         }
       } else if (feedback.trim().toLowerCase() === 'no') {
         alert ('You know you actually liked it! :3');
       } else {
-        alert("These are simple yes or no questions! Get it right!");
+        alert('These are simple yes or no questions! Get it right!');
       }
       console.log('user input to prompt feedback was ' + feedback);
       console.log('user input to confirm clarity was ' + clarity);
+    }
+    testFeedback();
 
 //Question 6
+
     var correctNumber = 12;
     var notDone = true;
-    var guess;
-
-      for (var guessesLeft = 6; guessesLeft > 0  && notDone; guessesLeft--) {
-        userGuess = prompt('What is my favorite number between 5 and 15?');//gets user input
-        userGuess = parseInt(guess);//converts user input "guess" to a number     "pareseInt".
-      if (userGuess === correctNumber) {
-        notDone = false;
+    function numberTwelve(){
+      for (var guessesLeft = 6; guessesLeft > 0 && notDone; guessesLeft--) {
+        var userGuess = prompt('What is my favorite number between 5 and 15?');//gets user input
+        userGuess = parseInt(userGuess);//converts user input "guess" to a number     "pareseInt".
+        console.log('function working',userGuess);
+        if (userGuess === correctNumber) {
+          notDone = false;
           alert('You got it right!');
           answersRight++;
-      } else if (guessesLeft === 0) {
+        } else if (guessesLeft === 1) {
+          console.log('out of guess');
           alert('you are out of answers');
         } else {
           alert('guess again');
         }
       }
-
+    }
+    numberTwelve();
 //Question 7
     var state = ['montana', 'oregon', 'florida', 'arizona'];
     var notDone = true;
     var guess;
-
-      for (var guessesLeft = 6; guessesLeft > 0  && notDone; guessesLeft--) {
+    function statesVisit(){
+      for (var guessesLeft = 6; guessesLeft > 0 && notDone; guessesLeft--) {
         //The above line will run the for loop UNTIL "notDone" becomes false.
         guess = prompt('What is a state have I been to other than Washington state?');
-      if (state.indexOf(guess.trim().toLowerCase()) >= 0 ) {
-        notDone = false;
+        if (state.indexOf(guess.trim().toLowerCase()) >= 0 ) {
+          notDone = false;
           alert('You guessed one of them right!');
           answersRight++;
-      } else if (guessesLeft === 0) {
+        } else if (guessesLeft === 1) {
           alert('you are out of guesses!');
+          console.log('guesses', guess);
         } else {
           alert('guess again!');
+          console.log('guesses', guess);
         }
       }
-          alert('All the correct answers are ' + state.toString());
-
-
-
-       var count = alert('You got ' + answersRight + ' answers out of 7 questions correct!');//A new variable "count" is declared with the assigned value of an alert that will show a pop-up message with the very top variable "answersRight" which keeps track of all the answersRight the user has got once all the above code has been run.
+    }
+    statesVisit();
+    alert('All the correct answers are ' + state.toString());
+    var count = alert('You got ' + answersRight + ' answers out of 7 questions correct!');//A new variable "count" is declared with the assigned value of an alert that will show a pop-up message with the very top variable "answersRight" which keeps track of all the answersRight the user has got once all the above code has been run.
 //}//End brace to window.onload = function() {
 //
 // CLASS-003 CODE DEMO
